@@ -20,6 +20,7 @@ services:
       - ..:/workspace:cached
     ports:
       - 9000:9000
+      - 5173:5173 # vue port
   
   # adminer:
   #   image: adminer

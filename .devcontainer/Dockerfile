@@ -76,15 +76,50 @@ LABEL org.opencontainers.image.url=https://github.com/Tekki/docker-mojolicious
 LABEL org.opencontainers.image.version=9.40-mariadb
 
 
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+#RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 
-RUN source ~/.bashrc
+#RUN source ~/.bashrc
 
-RUN nvm list-remote
+#ENV NVM_DIR /usr/local/nvm
 
-RUN nvm install v24.1.0
+#ENV NVM_DIR=/usr/bin
+#RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 
-RUN nvm alias default v24.1.0
+#RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+
+#RUN . "$NVM_DIR/nvm.sh" && nvm install 6.9.1
+#https://github.com/moby/moby/issues/30066
+#RUN . "$NVM_DIR/nvm.sh"
+
+#/bin/sh: 1: source: not found
+#RUN source $NVM_DIR/nvm.sh
+
+#RUN nvm list-remote
+
+#RUN nvm install v24.1.0
+
+#RUN nvm alias default v24.1.0
+
+# or ~/.nvm , depending
+#ENV NVM_DIR /usr/local/nvm 
+
+#ENV NVM_DIR ~/.nvm
+
+#usr/local/bin/perl
+#ENV NVM_DIR /usr/local/bin/nvm 
+
+ENV NODE_VERSION v24.1.0
+
+RUN curl https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh  | bash \
+    # && . $NVM_DIR/nvm.sh \
+    && . $NVM_DIR/nvm.sh \
+    && nvm install $NODE_VERSION \
+    && nvm alias default $NODE_VERSION \
+    && nvm use default
+
+ENV NODE_PATH $NVM_DIR/v$NODE_VERSION/lib/node_modules
+ENV PATH      $NVM_DIR/v$NODE_VERSION/bin:$PATH
+
 
 RUN cpanm Test::Needs --force
 RUN cpanm JSON::MaybeXS
@@ -110,37 +145,3 @@ RUN cpanm GraphQL
 
 
 ENTRYPOINT ["tail", "-f", "/dev/null"]
-# CMD ["/bin/bash", "-c"]
-
-#perl: warning: Falling back to the standard locale ("C").
-
-#RUN curl -L https://cpanmin.us | perl - -M https://cpan.metacpan.org -n Mojolicious
-
-# INSTALL PERL
-
-#https://github.com/Tekki/docker-mojolicious
-#https://mojolicious.io/blog/2017/12/01/day-1-getting-started/
-
-
-#
-
-
-
-# Install MariaDB client
-# RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-#     && apt-get install -y mariadb-client \ 
-#     && apt-get clean -y && rm -rf /var/lib/apt/lists/*
-
-# # Install php-mysql driver
-# RUN docker-php-ext-install mysqli pdo pdo_mysql
-
-# # [Optional] Uncomment this section to install additional OS packages.
-# # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-# #     && apt-get -y install --no-install-recommends <your-package-list-here>
-
-# # [Optional] Uncomment this line to install global node packages.
-# # RUN su vscode -c "source /usr/local/share/nvm/nvm.sh && npm install -g <your-package-here>" 2>&1
-
-
-# prevent exit
-#ENTRYPOINT ["tail", "-f", "/dev/null"]
