@@ -124,3 +124,13 @@ windows subsystem for linux
 wsl
 
 
+https://hub.docker.com/_/mariadb
+
+
+https://www.reddit.com/r/mysql/comments/y5u1au/exactly_how_free_mysql_is/
+
+
+https://code.visualstudio.com/docs/containers/overview
+
+
+https://docs.docker.com/desktop/setup/install/windows-install/
