@@ -9,11 +9,20 @@ services:
     restart: always
     environment:
       MARIADB_ROOT_PASSWORD: example
-    volumes:
-      # This is where VS Code should expect to find your project's source code and the value of "workspaceFolder" in .devcontainer/devcontainer.json
-      - ..:/workspace:cached
-  adminer:
-    image: adminer
-    restart: always
     ports:
-      - 8080:8080
+      - 3306:3306
+  
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ..:/workspace:cached
+    ports:
+      - 9000:9000
+  
+  # adminer:
+  #   image: adminer
+  #   restart: always
+  #   ports:
+  #     - 8080:8080
