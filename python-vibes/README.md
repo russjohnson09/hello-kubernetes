@@ -34,3 +34,8 @@ https://semaphore.io/community/tutorials/testing-python-applications-with-pytest
 
 
 https://github.com/numpy/numpy-tutorials/blob/main/requirements.txt
+
+
+[text](https://docs.python-guide.org/writing/structure/)
+
+

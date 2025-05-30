@@ -11,6 +11,7 @@
 # pluggy==1.6.0
 # py==1.10.0
 pytest
+numpy
 # ==8.3.5
 # pytest-mock==1.10.3
 # pytest-watch==4.2.0
