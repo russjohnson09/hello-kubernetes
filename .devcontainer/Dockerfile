@@ -106,7 +106,7 @@ LABEL org.opencontainers.image.version=9.40-mariadb
 #ENV NVM_DIR ~/.nvm
 
 #usr/local/bin/perl
-#ENV NVM_DIR /usr/local/bin/nvm 
+ENV NVM_DIR /root/.nvm
 
 ENV NODE_VERSION v24.1.0
 
@@ -117,8 +117,8 @@ RUN curl https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh  | bash
     && nvm alias default $NODE_VERSION \
     && nvm use default
 
-ENV NODE_PATH $NVM_DIR/v$NODE_VERSION/lib/node_modules
-ENV PATH      $NVM_DIR/v$NODE_VERSION/bin:$PATH
+# ENV NODE_PATH $NVM_DIR/v$NODE_VERSION/lib/node_modules
+# ENV PATH      $NVM_DIR/v$NODE_VERSION/bin:$PATH
 
 
 RUN cpanm Test::Needs --force
