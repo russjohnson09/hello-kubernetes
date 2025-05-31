@@ -41,3 +41,4 @@ https://www.sqlalchemy.org/
 https://flask.palletsprojects.com/en/stable/quickstart/
 
 
+https://flask.palletsprojects.com/en/stable/tutorial/layout/

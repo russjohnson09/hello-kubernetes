@@ -3,3 +3,7 @@
 *.pyc
 __pycache__/
 *.env
+
+
+#        DATABASE=os.path.join(app.instance_path, 'flaskr.sqlite'),
+instance/flaskr.sqlite
