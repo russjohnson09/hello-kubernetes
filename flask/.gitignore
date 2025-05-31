@@ -1,0 +1,5 @@
+# Ignore file for Python projects
+
+*.pyc
+__pycache__/
+*.env

@@ -27,3 +27,17 @@ pip install -r requirements.txt
 python-dotenv enables support for Environment Variables From dotenv when running flask commands.
 
 Watchdog provides a faster, more efficient reloader for the development server.
+
+
+
+
+flask --app hello run
+
+
+
+https://www.sqlalchemy.org/
+
+
+https://flask.palletsprojects.com/en/stable/quickstart/
+
+
