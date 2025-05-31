@@ -1,0 +1,8 @@
+Flask
+pytest
+numpy
+
+
+#optional
+python-dotenv
+watchdog
