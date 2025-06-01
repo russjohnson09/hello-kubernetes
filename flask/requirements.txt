@@ -11,3 +11,11 @@ coverage
 
 
 pandas
+
+# saves / loads in feather format
+# also parquet format?
+pyarrow
+
+
+# https://matplotlib.org/stable/install/index.html
+matplotlib
