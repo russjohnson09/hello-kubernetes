@@ -1,6 +1,7 @@
 from flaskr import create_app
 
 
+#pytest -vs tests/flaskr/
 #pytest -vs tests/test_factory.py
 def test_config():
     assert not create_app().testing
