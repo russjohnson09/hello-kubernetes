@@ -42,3 +42,9 @@ https://flask.palletsprojects.com/en/stable/quickstart/
 
 
 https://flask.palletsprojects.com/en/stable/tutorial/layout/
+
+
+
+https://ipython.org/notebook.html
+
+tutorial.ipynb
