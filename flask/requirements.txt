@@ -1,8 +1,10 @@
+# pip install -r requirements.txt
 Flask
-pytest
-numpy
 
-
-#optional
+#optional to flask
 python-dotenv
 watchdog
+
+pytest
+numpy
+coverage
